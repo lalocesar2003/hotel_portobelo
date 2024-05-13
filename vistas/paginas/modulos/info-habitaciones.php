@@ -70,24 +70,21 @@ INFO HABITACIÓN
 			        <div class="slide-inner">
 			            
 			            <ul class="slide-area">
+							<?php
+							$galeria=json_decode($habitaciones[0]["galeria"],true);
+							
+							?>
 
-				            <li>	
+						<?php foreach ($galeria as $key => $value): ?>
+							   <li>	
 
-								<img src="img/oriental.png" class="img-fluid">
+							   <img src="<?php echo $servidor.$value; ?>" class="img-fluid">
 
-							</li>
-
-							<li>	
-
-								<img src="img/oriental.png" class="img-fluid">
-
-							</li>
-
-							<li>	
-
-								<img src="img/oriental.png" class="img-fluid">
-
-							</li>							
+						   </li>
+						 
+						<?php endforeach ?>
+				         
+						
 
 						</ul>
 
@@ -113,7 +110,7 @@ INFO HABITACIÓN
 
 				<section class="mb-3 my-lg-3 videoHabitaciones d-none">
 					
-					<iframe width="100%" height="380" src="https://www.youtube.com/embed/JTu790_yyRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe width="100%" height="380" src="https://www.youtube.com/embed/<?php echo $habitaciones[0]["video"];?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				
 				</section>
 
@@ -121,7 +118,7 @@ INFO HABITACIÓN
 
 				<section class="mb-3 my-lg-3 360Habitaciones d-none">
 
-					<div id="myPano" class="pano">
+					<div id="myPano" class="pano" back= "<?php echo $servidor.$habitaciones[0]["recorrido_virtual"];?>">
 
 						<div class="controls">
 							<a href="#" class="left">&laquo;</a>
