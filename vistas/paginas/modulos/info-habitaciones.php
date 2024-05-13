@@ -3,7 +3,7 @@
 $valor=$_GET["pagina"];
 
 $habitaciones =ControladorHabitaciones::ctrMostrarHabitaciones($valor);
-echo '<pre class="bg-white">';print_r($habitaciones);echo '</pre>';
+
 
 ?>
 
@@ -34,44 +34,27 @@ INFO HABITACIÓN
 						<h5><i class="fas fa-chevron-left"></i> Regresar</h5>
 					</a>
 
-					<h2 class="float-right text-white px-3 categoria">SUITE</h2>
+					<h2 class="float-right text-white px-3 categoria"><?php echo $habitaciones[0]["tipo"];?></h2>
 
 					<div class="clearfix"></div>
 
 					<ul class="nav nav-justified mt-lg-4">	
 
+						<?php foreach ($habitaciones as $key => $value):?>
+
+						
+
 						<li class="nav-item">
 
-							<a class="nav-link text-white active" href="#">
-								<i class="fas fa-chevron-right"></i> Oriental
+							<a class="nav-link text-white" href="#">
+							<?php echo $value["estilo"]; ?>
 							</a>
 
 						</li>
 
-						<li class="nav-item">
+						<?php endforeach ?>	
 
-							<a class="nav-link text-white" href="#">Moderna</a>
-
-						</li>
-
-						<li class="nav-item">
-
-							<a class="nav-link text-white" href="#">Africana</a>
-
-						</li>
-
-						<li class="nav-item">
-
-							<a class="nav-link text-white" href="#">Clásica</a>
-
-						</li>
-
-						<li class="nav-item">
-
-							<a class="nav-link text-white" href="#">Retro</a>
-
-						</li>
-
+						
 					</ul>
 
 				</div>

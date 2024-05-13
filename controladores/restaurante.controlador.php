@@ -4,7 +4,7 @@ Class ControladorRestaurante{
 
 
     static public function ctrMostrarRestaurante(){
-        $tabla= "Restaurante";
+        $tabla= "restaurante";
         $respuesta = ModeloRestaurante::mdlMostrarRestaurante($tabla);
         return $respuesta;
         
